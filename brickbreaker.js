@@ -113,8 +113,8 @@ BrickBreaker = new (function () {
     *  1 second of movement = modifier * 60
     */
    var modifiers = {
-      ball_x: 7,
-      ball_y: 7,
+      ball_x: 10,
+      ball_y: 10,
       plat_x: 17,
    };
 
@@ -167,8 +167,8 @@ BrickBreaker = new (function () {
       current_level = 0;
       bricksActive = 0;
       modifiers = {
-         ball_x: 7,
-         ball_y: 7,
+         ball_x: 10,
+         ball_y: 10,
          plat_x: 17,
       };
 
