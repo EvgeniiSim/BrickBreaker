@@ -1,0 +1,280 @@
+/*##############################################################################
+CSS RESET
+##############################################################################*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+   display: block;
+}
+body {
+   line-height: 1;
+}
+ol,
+ul {
+   list-style: none;
+}
+blockquote,
+q {
+   quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+   content: "";
+   content: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+input {
+   box-sizing: content-box;
+   -moz-box-sizing: content-box;
+}
+
+/*##############################################################################
+BASE SETTINGS
+##############################################################################*/
+
+html {
+   font-size: 0.5px;
+   min-width: 640px;
+   min-height: 100%;
+   max-height: 100%;
+   overflow: hidden;
+}
+
+body {
+   overflow: hidden;
+   background: transparent;
+   color: #000;
+   min-height: 100%;
+   max-height: 100%;
+
+   font-family: "Helvetica", "Arial", sans-serif;
+   font-size: 14px;
+   line-height: 1;
+}
+
+/*##############################################################################
+BRICKBREAKER STYLES
+##############################################################################*/
+
+/* Score */
+#score {
+   font-size: 20px;
+   margin-bottom: 10px;
+   display: none;
+}
+/* Lives */
+#lives {
+   font-size: 20px;
+   margin-bottom: 10px;
+   display: none;
+}
+
+/* Contianer */
+#container {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: #f6f4d2;
+   background: url(./assets/imgs/BrickBreaker_BG.png);
+   background-size: cover;
+}
+
+/* Bricks */
+#bricks {
+   display: block;
+   position: relative;
+   width: 100%;
+   height: 100%;
+}
+#bricks > div {
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   float: left;
+   width: 150px;
+   height: 50px;
+   background: #cbdfbd;
+   margin: 6px;
+   transition: all ease-in-out 250ms;
+   background: url(./assets/imgs/BrickBreaker_Brick_Green.png);
+   background-size: cover;
+}
+#bricks > div.empty {
+   background: none;
+}
+#bricks > div.strong {
+   background: url(./assets/imgs/BrickBreaker_Brick_Orange.png);
+   background-size: cover;
+}
+#bricks > div.strong.hit:before {
+   content: "";
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   border: 2px solid #c75858;
+}
+#bricks > div.invuln {
+   background: url(./assets/imgs/BrickBreaker_Brick_Gray.png);
+   background-size: cover;
+}
+
+/* Ball */
+#ball {
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 12px;
+   height: 12px;
+   background: #a44a3f;
+   background: url(./assets/imgs/Ball.png);
+   background-size: cover;
+}
+
+/* Platform */
+#platform {
+   display: block;
+   position: absolute;
+   bottom: 40px;
+   background: #f19c79;
+   width: 160px;
+   height: 40px;
+   background: url(./assets/imgs/BrickBreaker_Board.png);
+   background-size: cover;
+}
+
+/* Message */
+#message {
+   display: block;
+   position: absolute;
+   z-index: 100;
+   background: rgba(0, 0, 0, 0.5);
+   border-radius: 10px;
+   width: 30%;
+   left: 50%;
+   top: 50%;
+   margin-left: -15%;
+   text-align: center;
+   color: #fff;
+   padding: 6px;
+   font-size: 20px;
+
+   visibility: hidden;
+   opacity: 0;
+   transition: all ease-in-out 250ms;
+}
+#message.active {
+   visibility: visible;
+   opacity: 1;
+}
