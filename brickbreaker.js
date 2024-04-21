@@ -113,9 +113,9 @@ BrickBreaker = new (function () {
     *  1 second of movement = modifier * 60
     */
    var modifiers = {
-      ball_x: 17,
-      ball_y: 17,
-      plat_x: 25,
+      ball_x: 10,
+      ball_y: 10,
+      plat_x: 20,
    };
 
    //########################################
